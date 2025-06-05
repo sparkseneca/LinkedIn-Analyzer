@@ -31,7 +31,11 @@ pip install -r requirements.txt
 ## Running the App
 
 From the repository root you can either launch the interactive Streamlit UI or
-run a simple command-line analysis.
+run a simple command-line analysis. If you prefer to keep the Streamlit app in
+its own repository, simply copy the `linkedin_network_evaluator` folder,
+`streamlit_app.py` and `requirements.txt` into a new directory and initialise a
+Git repository there. The commands below work both here and in that standalone
+folder.
 
 ### Streamlit Web App
 
