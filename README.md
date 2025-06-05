@@ -1,30 +1,74 @@
-# Project with chat API
+# LinkedIn Network Evaluation Tool
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+This repository contains a simple Python application for analyzing your exported LinkedIn connections. Upload the `Connections.csv` file generated from LinkedIn to get insights about companies, job titles, and seniority levels within your network.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/jims-projects-c7bd5b4f/v0-project-with-chat-api-rl)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/EVKCOhHpoEa)
+## Features
 
-## Overview
+- **KPI tiles** – total connections, recent adds, email coverage and monthly cadence.
+- **Connections heatmap** – year/month grid showing networking streaks.
+- **Company vs Position matrix** – where you hold relationships across seniority levels.
+- **Seniority breakdown** – executives, directors, managers, ICs.
+- **Connection anniversaries** – people you connected with on this day in previous years.
+- **Latest connections list** – quick follow-up view.
+- **Longest streak** – maximum days with a new connection.
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+The app is implemented with [Streamlit](https://streamlit.io/) for a lightweight web interface.
 
-## Deployment
+## Prerequisites
 
-Your project is live at:
+- Python 3.8 or higher
 
-**[https://vercel.com/jims-projects-c7bd5b4f/v0-project-with-chat-api-rl](https://vercel.com/jims-projects-c7bd5b4f/v0-project-with-chat-api-rl)**
+## Installation
 
-## Build your app
+1. Clone this repository.
+2. (Optional) create and activate a virtual environment.
+3. Install dependencies:
 
-Continue building your app on:
+```bash
+pip install -r requirements.txt
+```
 
-**[https://v0.dev/chat/projects/EVKCOhHpoEa](https://v0.dev/chat/projects/EVKCOhHpoEa)**
+## Running the App
 
-## How It Works
+From the repository root you can either launch the interactive Streamlit UI or
+run a simple command-line analysis. If you prefer to keep the Streamlit app in
+its own repository, simply copy the `linkedin_network_evaluator` folder,
+`streamlit_app.py` and `requirements.txt` into a new directory and initialise a
+Git repository there. The commands below work both here and in that standalone
+folder.
 
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+### Streamlit Web App
+
+```bash
+streamlit run streamlit_app.py
+```
+
+A browser window will open where you can upload your `Connections.csv` file.
+LinkedIn usually includes three informational lines at the top of this export –
+the application automatically skips these rows.
+
+### Command Line Usage
+
+```bash
+python -m linkedin_network_evaluator.cli /path/to/Connections.csv
+```
+
+This prints summary tables directly in the terminal.
+
+## CSV Format
+
+The tool expects the following columns after skipping the initial rows:
+
+- `First Name`
+- `Last Name`
+- `Company`
+- `Position`
+- `Connected On` (various common date formats are supported)
+
+Missing company or position values are treated as `Unknown`.
+
+## Future Improvements
+
+- Additional visualisations
+- Customisable seniority mapping
+- Export of processed data
