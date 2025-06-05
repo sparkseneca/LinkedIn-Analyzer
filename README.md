@@ -28,13 +28,26 @@ pip install -r requirements.txt
 
 ## Running the App
 
-From the repository root run:
+From the repository root you can either launch the interactive Streamlit UI or
+run a simple command-line analysis.
+
+### Streamlit Web App
 
 ```bash
 streamlit run linkedin_network_evaluator/app.py
 ```
 
-A browser window will open where you can upload your `Connections.csv` file. LinkedIn usually includes three informational lines at the top of this export – the application automatically skips these rows.
+A browser window will open where you can upload your `Connections.csv` file.
+LinkedIn usually includes three informational lines at the top of this export –
+the application automatically skips these rows.
+
+### Command Line Usage
+
+```bash
+python -m linkedin_network_evaluator.cli /path/to/Connections.csv
+```
+
+This prints summary tables directly in the terminal.
 
 ## CSV Format
 
