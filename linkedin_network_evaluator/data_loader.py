@@ -33,6 +33,9 @@ def load_connections(csv_path: str, skiprows: int = 3) -> pd.DataFrame:
     if missing:
         raise ValueError(f"Missing expected columns: {', '.join(missing)}")
 
+    if "Email Address" not in df.columns:
+        df["Email Address"] = ""
+
     # Handle missing values
     df["Company"] = df["Company"].fillna("Unknown")
     df["Position"] = df["Position"].fillna("Unknown")

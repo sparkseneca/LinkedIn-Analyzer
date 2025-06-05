@@ -4,11 +4,13 @@ This repository contains a simple Python application for analyzing your exported
 
 ## Features
 
-- **Overall summary** – total number of connections.
-- **Company analysis** – see which organisations dominate your network.
-- **Position titles** – frequency table of job titles.
-- **Seniority classification** – positions grouped into seniority levels (entry level, manager, executive, etc.).
-- **Connection trends** – optional chart showing how many connections you made over time.
+- **KPI tiles** – total connections, recent adds, email coverage and monthly cadence.
+- **Connections heatmap** – year/month grid showing networking streaks.
+- **Company vs Position matrix** – where you hold relationships across seniority levels.
+- **Seniority breakdown** – executives, directors, managers, ICs.
+- **Connection anniversaries** – people you connected with on this day in previous years.
+- **Latest connections list** – quick follow-up view.
+- **Longest streak** – maximum days with a new connection.
 
 The app is implemented with [Streamlit](https://streamlit.io/) for a lightweight web interface.
 
