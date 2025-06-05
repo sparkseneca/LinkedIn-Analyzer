@@ -34,7 +34,7 @@ run a simple command-line analysis.
 ### Streamlit Web App
 
 ```bash
-streamlit run linkedin_network_evaluator/app.py
+streamlit run streamlit_app.py
 ```
 
 A browser window will open where you can upload your `Connections.csv` file.
